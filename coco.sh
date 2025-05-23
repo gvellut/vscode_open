@@ -69,7 +69,7 @@ tell application \"System Events\" to tell process \"Code\"
     try
         try
             activate
-            delay 0.2
+            delay 0.1
         on error e
             log \"echo 'DEBUG_AS: Error during VSCode activate: \" & (my escape_for_shell(e as string)) & \"' >&2\"
             return false
@@ -152,12 +152,12 @@ applescript_command+="}
         if window_to_activate is not null then
             try
                 tell window_to_activate to perform action \"AXRaise\"
-                delay 0.2
+                delay 0.1
                 set frontmost to true
-                delay 0.2
+                delay 0.1
                 set windowMenu to menu \"Window\" of menu bar 1
                 click menu item (name of window_to_activate) of windowMenu
-                delay 0.2
+                delay 0.1
                 
                 set activated_other_window to true
                 try
@@ -210,7 +210,6 @@ fi
 # 3. Decide how to open files
 if [ "$activation_success_bool" = "true" ]; then
     log_debug "Decision: Found and activated a suitable VSCode window. Reusing it."
-    sleep 0.2
     echo "Opening files in reused VSCode window: $@"
     code --reuse-window "$@"
 else
