@@ -1,0 +1,43 @@
+# Python base .gitignore
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+.env
+.venv/
+venv/
+ENV/
+env/
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.log
+*.pot
+*.pyc
+*.coverage
+.coverage.*
+.cache/
+.pytest_cache/
+.mypy_cache/
+.pyre/
+.ipynb_checkpoints/
+# VS Code
+.vscode/
+# Jupyter Notebook
+.ipynb_checkpoints/
+# Unit test / coverage
+htmlcov/
+.tox/
+# macOS
+.DS_Store
+# Others
+*.swp
+*.bak
+*.tmp
+
+.python-version
